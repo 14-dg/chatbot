@@ -1,11 +1,12 @@
-
 import os
 import numpy as np
+import pandas as pd
+import cv2
+
 #gets away the text from tensorflow
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 import tensorflow as tf
-import cv2
 
 def load_model():
     old_model = tf.keras.models.load_model('saved/saved_model')
@@ -15,10 +16,13 @@ def load_model():
     return old_model
 
 def load_data():
-    mnist = tf.keras.datasets.mnist
+    data = pd.read_csv('answers.csv')
+    print(data)
+    
+    # mnist = tf.keras.datasets.mnist
 
-    (x_train, y_train), (x_test, y_test) = mnist.load_data()
-    return x_train / 255.0, x_test / 255.0, y_train, y_test
+    # (x_train, y_train), (x_test, y_test) = mnist.load_data()
+    # return x_train / 255.0, x_test / 255.0, y_train, y_test    
 
 def create_model():
     model = tf.keras.models.Sequential([
