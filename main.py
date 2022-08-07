@@ -16,7 +16,7 @@ def load_model():
     return old_model
 
 def load_data():
-    data = pd.read_csv('answers.csv')
+    data = pd.read_csv('train_data/answers.csv')
     print(data)
     
     # mnist = tf.keras.datasets.mnist
