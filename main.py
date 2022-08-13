@@ -15,8 +15,11 @@ def load_model():
     # old_model.summary()
     return old_model
 
+def encode(data):
+    return data
+
 def load_data():
-    data = pd.read_csv('train_data/answers.csv')
+    data = pd.read_csv('answers.csv')
     print(data)
     
     # mnist = tf.keras.datasets.mnist
