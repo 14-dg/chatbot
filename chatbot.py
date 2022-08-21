@@ -6,7 +6,7 @@ import numpy as np
 import nltk
 from nltk.stem import WordNetLemmatizer
 
-from keras.models import load_model
+from tensorflow.python.keras.models import load_model
 
 lemmatizer = WordNetLemmatizer()
 intents = json.loads(open('intents.json').read())
@@ -22,7 +22,7 @@ def clean_up_sentence(sentence):
 
 def bag_of_words(sentence):
     sentence_words = clean_up_sentence(sentence)
-    bag = [] * len(words)
+    bag = [0] * len(words)
     for w in sentence_words:
         for i, word in enumerate(words):
             if word == w:
