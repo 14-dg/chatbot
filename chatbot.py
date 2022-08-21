@@ -6,6 +6,11 @@ import numpy as np
 import nltk
 from nltk.stem import WordNetLemmatizer
 
+'''
+this time tensorflow keras is used to load
+the model
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+'''
 from tensorflow.python.keras.models import load_model
 
 lemmatizer = WordNetLemmatizer()
